@@ -4,11 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- *
+ *passei aqui
  * @author Icaro
  */
 @Controller
 public class IniciadorController {
+    
+    private String nome;
     
     /**
      * Quando o cliente acessar o endereço "/newman" será redirecionado para home 
