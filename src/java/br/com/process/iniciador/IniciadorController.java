@@ -18,4 +18,9 @@ public class IniciadorController {
     public String iniciando(){
         return "home";
     }
+    
+    @RequestMapping("/login")
+    public String login(){
+        return "Logi";
+    }
 }

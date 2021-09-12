@@ -12,32 +12,13 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap">
         <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/owl.carousel.min.css"/>">
         <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/owl.theme.default.min.css"/>">
-        <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/style.css"/>">
+        <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/MainCss.css"/>">
     </head>
     
     <body>
         
-        <header id="header"><!--Cabeçalho-->
-            <img src="resources/img/oi.png" class="logo">
-            <div class="header-pesquisa">
-                <input id="barra-pesquisa" type="text" placeholder="Pesquisa" alt="lupa" class="txt">
-                <!--IMAGEM DA LUPA-->
-            </div>
-            <nav id="nav">
-                <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-                    <span id="hamburger"></span>
-                </button>
-                <ul id="menu" role="menu">
-                    <li><a href="/">Sobre</a></li>
-                    <li><a href="/">Login</a></li>
-                    <li><a href="/"><img src="resources/img/shopping-cart-outline_icon-icons.com_56126.png" class="carrinho"></a></li>
-                </ul>
-            </nav>
-        </header><!--Fim do Cabeçalho-->
-
-        <div class="header-2"><!--Div do segundo Cabeçalho-->
-          teste
-        </div><!--Fim da div-->
+        <c:import url="header.jsp"/>
+        
         <h1 class="h1-nmarca">Nossas Marcas</h1>
         <div class="owl-carousel owl-theme">
             <div class="item">
