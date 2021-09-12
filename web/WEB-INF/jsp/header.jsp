@@ -15,14 +15,15 @@
     <body>
         <header id="">
             <div id="header">
-                <img src="resources/img/oi.png" class="logo">
-            
+                <a href="index">
+                    <img src="resources/img/oi.png" class="logo">
+                </a>
                 <nav id="nav">
                     <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
                             <span id="hamburger"></span>
                         </button>
                     <ul id="menu" role="menu">
-                        <li><a href="Login.jsp" class="use">
+                        <li><a href="login" class="use">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-fill svg-menu" viewBox="0 0 16 16">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                                 </svg>
