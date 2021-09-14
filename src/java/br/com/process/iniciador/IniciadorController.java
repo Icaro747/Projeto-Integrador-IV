@@ -13,7 +13,7 @@ public class IniciadorController {
     private String nome;
     
     /**
-     * Quando o cliente acessar o endereço "/newman" será redirecionado para home 
+     * Quando o cliente giacessar o endereço "/newman" será redirecionado para home 
      * @return home.jsp
      */
     @RequestMapping("/newman")
