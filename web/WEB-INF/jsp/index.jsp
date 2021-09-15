@@ -5,6 +5,7 @@
 
 <html lang="pt-BR">
     <head>
+        <title>New Man</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,53 +20,367 @@
         
         <c:import url="header.jsp"/>
         
-        <h1 class="h1-nmarca">Nossas Marcas</h1>
-        <div class="owl-carousel owl-theme">
-            <div class="item">
-                <img class="img-roupa" src="resources/img/roupa1.png">
-                <h1 class="h1-nomeroupa">Camiseta</h1>
-                <h1 class="h1-valor-roupa">R$ 50.00</h1>
-                <div class="div-btn">
-                    <button type="submit" class="adicionar-btn">Adicionar</button>
-                </div>  
-            </div>
-            <div class="item">
-                <img class="img-roupa" src="resources/img/roupa1.png">
-                <h1 class="h1-nomeroupa">Camiseta</h1>
-                <h1 class="h1-valor-roupa">R$ 50.00</h1>
-                <div class="div-btn">
-                    <button type="submit" class="adicionar-btn">Adicionar</button>
+        <c:import url="Carousel.jsp"/>
+        
+        <div class="ConteinerProdutos">
+            
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <img class="img-roupa" src="resources/img/roupa1.png">
-                <h1 class="h1-nomeroupa">Camiseta</h1>
-                <h1 class="h1-valor-roupa">R$ 50.00</h1>
-                <div class="div-btn">
-                    <button type="submit" class="adicionar-btn">Adicionar</button>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ProdutoBox">
+                <div class="Deliniado">
+                    <div class="ProdutoImg">
+                        <a href="">
+                            <img src="resources/img/roupa.jpg">
+                        </a>
+                    </div>
+                    <div class="ProdutoTitolo">
+                        <a href="">
+                            <h2>
+                                <strong>
+                                    prototo
+                                </strong>
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="ProdutoPreso">
+                        <div class="DivisoriaPreso">
+                            <div class="PresoVista">
+                                <span>R$ 50,90</span>
+                                <small> á vista</small>
+                            </div>
+                            <div class="PresoJuros">
+                              <span>3x</span>
+                              <small> de </small>
+                              <span>R$ 16,96</span>
+                              <small> sem juros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
         </div>
-        <div class="conteiner">
-            <div class="destaques">
-              teste
-            </div>
-            <div class="destaques">
-              teste
-            </div>
-            <div class="destaques">
-              teste
-            </div>
-            <div class="destaques">
-              teste
-            </div>
-            <div class="destaques">
-              teste
-            </div>
-            <div class="destaques">
-              teste
-            </div>
-        </div>
+        
+        
         
         <script src="resources/js/jQuery3.min.lib.js"></script>  
         <script src="resources/js/owl.carousel.min.js"></script> 
