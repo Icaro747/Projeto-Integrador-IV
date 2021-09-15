@@ -1,8 +1,8 @@
 
-package br.senac.sp.newman.dao;
+package br.com.process.dao;
 
-import br.senac.sp.newman.conexao.Conexao;
-import br.senac.sp.newman.entidade.Produto;
+import br.com.process.conexao.Conexao;
+import br.com.process.entidade.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
