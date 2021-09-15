@@ -51,10 +51,6 @@ header{
     gap: 2rem;
     align-items: center;
 }
-.svg-menu{
-    height: 32;
-    width: 32;
-}
 /*
 #menu a {
     display: block;
@@ -85,10 +81,6 @@ header{
     display: flex;
     align-items: center;
 }
-.ico-pesquisa svg{
-    background-color: var(--text-cor1);
-}
-
 .txt {
     border: none;
     background: var(--cor-background);
@@ -98,8 +90,7 @@ header{
     font-size: 18px;
     line-height: 20px;
     width: 100%;
-    border-radius: 40px;
-    box-shadow: 0 0 1m #ffffff;
+    border-radius: 40px 0px 0px 40px;
 }
 
 
@@ -119,6 +110,7 @@ header{
     font-size: 3em;
     padding: 5px;
     font-weight: bold;
+    margin-top: 2%;
 }
 
 .h1-valor-roupa,
@@ -133,7 +125,7 @@ header{
     padding: 15px;
 }
 
-.adicionar-btn {
+.btn-linhas{
     cursor: pointer;
     height: 40px;
     width: 85px;
@@ -142,7 +134,7 @@ header{
     background-color: #363636;
     color: var(--text-cor1);
     border-radius: 10px;
-    box-shadow: 0 0 1em var(--sobra);
+    box-shadow: 0 0 1em var(--sobra)
 }
 
 .adicionar-btn:hover {
@@ -150,17 +142,17 @@ header{
     transition: .6s;
     box-shadow: 0 0 1em var(--sobra);
 }
-
-
-/*Div Das Roupas*/
-
-.img-roupa {
-    box-shadow: 0 0 1em;
-    margin-top: 5%;
-    border-radius: 5px;
+.ico-pesquisa{
+    height: 40px;
+    background: var(--cor-background);
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    border-radius: 0px 40px 40px 0px;
 }
-
-
+.ico-pesquisa a{
+    cursor: pointer;
+}
 /*DESTAQUES*/
 
 .conteiner {
@@ -243,5 +235,6 @@ header{
     }
     #barra-pesquisa{
         width: 90%;
+        
     }
 }
