@@ -8,8 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -17,126 +15,175 @@ import java.util.logging.Logger;
  */
 public class ProdutoDAO {
     
-    public static boolean cadastrar(Produto produto){
-        boolean ok = true;
-        String query = "insert into Produtos (nome, marca, tamanho, descricao, tag, quantidade, v_compra, v_venda, status) values (?,?,?,?,?,?,?,?,?)";
-        Connection con;
-        try {
-            con = Conexao.getConexao();
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, produto.getNome());
-            ps.setString(2, produto.getMarca());
-            ps.setString(3, produto.getTamanho());
-            ps.setString(4, produto.getDescricao());
-            ps.setString(5, produto.getTag());
-            ps.setInt(6, produto.getQuantidade());
-            ps.setDouble(7, produto.getV_compra());
-            ps.setDouble(8, produto.getV_venda());
-            ps.setString(9, produto.getStatus());
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            ok = false;
-        }
-        return ok;        
-    } 
-    
-    public static List<Produto> getProdutos() {
-        List<Produto> produtos = new ArrayList<>();
-        String query = "select * from Produtos";
-        Connection con;
-        try {
-            con = Conexao.getConexao();
-            PreparedStatement ps = con.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
-                int id_produto = rs.getInt("id_produto");
-                String nome = rs.getString("nome");
-                String marca = rs.getString("marca");
-                String tamanho = rs.getString("tamanho");
-                String descricao = rs.getString("descricao");
-                String tag = rs.getString("tag");
-                int quantidade = rs.getInt("quantidade");
-                double v_compra  = rs.getDouble("v_compra");
-                double v_venda  = rs.getDouble("v_venda");
-                String status = rs.getString("status");
-                
-                Produto produto = new Produto(id_produto, nome, marca, tamanho, descricao, tag, quantidade, v_compra, v_venda, status);
-                produtos.add(produto);
+    /**
+     * método para adicionar os dados do produto no banco de dados.
+     * @param produto Entidade a ser adicionar.
+     * @return <b>true</b> se a adicionar foi bem sucedida <b>false</b> se não for.
+     */
+    public static boolean Adicionar(Produto produto){
+        
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+        
+        try{
+            conexao = Conexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("INSERT INTO Produtos (Nome, Marca, Tamanho, Descricao, Tag, Quantidade, V_compra, V_venda, Statu) VALUES (?,?,?,?,?,?,?,?,?)");
+            
+            instrucaoSQL.setString(1, produto.getNome());
+            instrucaoSQL.setString(2, produto.getMarca());
+            instrucaoSQL.setString(3, produto.getTamanho());
+            instrucaoSQL.setString(4, produto.getDescricao());
+            instrucaoSQL.setString(5, produto.getTag());
+            instrucaoSQL.setInt(6, produto.getQuantidade());
+            instrucaoSQL.setDouble(7, produto.getV_compra());
+            instrucaoSQL.setDouble(8, produto.getV_venda());
+            instrucaoSQL.setBoolean(9, produto.isStatus());
+            
+            int linhaAfetadas = instrucaoSQL.executeUpdate();
+            return linhaAfetadas > 0;
+            
+        } catch (SQLException e){
+            throw new IllegalArgumentException(e.getMessage());
+        }finally{
+            try {
+                if (instrucaoSQL!=null) {
+                    instrucaoSQL.close();
+                }
+                if (conexao!=null) {
+                    conexao.close();
+                    Conexao.fecharConexao();  
+                }
+            } catch (SQLException e) {
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return produtos;
     }
-
-    public static Produto getProduto(int id_produto) {
-        Produto produto = null;
-        String query = "select * from Produtos where id_produto=?";
-        Connection con;
-        try {
-            con = Conexao.getConexao();
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, id_produto);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                String nome = rs.getString("nome");                
-                String marca = rs.getString("marca");
-                String tamanho = rs.getString("tamanho");
-                String descricao = rs.getString("descricao");                
-                String tag = rs.getString("tag");                                
-                int quantidade = rs.getInt("quantidade");
-                double v_compra = rs.getDouble("v_compra");
-                double v_venda = rs.getDouble("v_venda");
-                String status = rs.getString("status");
-                produto = new Produto(id_produto, nome, marca, tamanho, descricao, tag, quantidade, v_compra, v_venda, status);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return produto;
-    }   
-
-    public static boolean inativar(int id_produto) {
-        boolean ok = true;
-        String query = "update Produtos set status='Inativo' where id_produto=?";
-        Connection con;
-        try {
-            con = Conexao.getConexao();
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, id_produto);
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            ok = false;
-        }
-        return ok;
-    }   
     
-
-    public static boolean atualizar(Produto produto) {
-        boolean ok = true;
-        String query = "update Produtos set nome=?, marca=?, tamanho=?, descricao=?, tag=?, quantidade=?, v_compra=?, v_venda=?, status=?"
-                + " where id_produto=?";
-        Connection con;
-        try {
-            con = Conexao.getConexao();
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, produto.getNome());
-            ps.setString(2, produto.getMarca());
-            ps.setString(3, produto.getTamanho());
-            ps.setString(4, produto.getDescricao());            
-            ps.setString(5, produto.getTag());            
-            ps.setInt(6, produto.getQuantidade());
-            ps.setDouble(7, produto.getV_compra());
-            ps.setDouble(8, produto.getV_venda());
-            ps.setString(9, produto.getStatus());
-            ps.setInt(10, produto.getId_produto());           
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            ok = false;
+    /**
+     * Método para excluir um produto do banco de dados.
+     * @param produto Entidade identifica o produto a ser excluído.
+     * @return <b>true</b> se a exclusão foi bem sucedida <b>false</b> se não for.
+     */
+    public static boolean Excluir(Produto produto){
+        
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+        
+        try{
+            conexao = Conexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("DELETE FROM Produtos WHERE ID_Produto = ?");
+            
+            instrucaoSQL.setInt(1, produto.getId_produto());
+            
+            int linhaAfetadas = instrucaoSQL.executeUpdate();
+            return linhaAfetadas > 0;
+        } catch (SQLException e){
+            throw new IllegalArgumentException(e.getMessage());
+        }finally{
+            try {
+                if (instrucaoSQL!=null) {
+                    instrucaoSQL.close();
+                }
+                if (conexao!=null) {
+                    conexao.close();
+                    Conexao.fecharConexao();  
+                }
+            } catch (SQLException e) {
+            }
         }
-        return ok;
-    }    
+    }
+    
+    /**
+     * método para atualizar os dados do produto.
+     * @param produto Entidade a ser atualizar e os demais dados.
+     * @return <b>true</b> se a Atualizar foi bem sucedida <b>false</b> se não for.
+     */
+    public static boolean Atualizar(Produto produto){
+        
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+        
+        try{
+            conexao = Conexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE Produtos SET Nome = ?, Marca = ?, Tamanho = ?, Descricao = ?, Tag = ?, Quantidade = ?, V_compra = ?, V_venda = ?, Statu = ? WHERE ID_Produto = ?");
+            
+            instrucaoSQL.setString(1, produto.getNome());
+            instrucaoSQL.setString(2, produto.getMarca());
+            instrucaoSQL.setString(3, produto.getTamanho());
+            instrucaoSQL.setString(4, produto.getDescricao());
+            instrucaoSQL.setString(5, produto.getTag());
+            instrucaoSQL.setInt(6, produto.getQuantidade());
+            instrucaoSQL.setDouble(7, produto.getV_compra());
+            instrucaoSQL.setDouble(8, produto.getV_venda());
+            instrucaoSQL.setBoolean(9, produto.isStatus());
+            instrucaoSQL.setInt(10, produto.getId_produto());
+            
+            int linhaAfetadas = instrucaoSQL.executeUpdate();
+            return linhaAfetadas > 0;
+        } catch (SQLException e){
+            throw new IllegalArgumentException(e.getMessage());
+        }finally{
+            try {
+                if (instrucaoSQL!=null) {
+                    instrucaoSQL.close();
+                }
+                if (conexao!=null) {
+                    conexao.close();
+                    Conexao.fecharConexao();  
+                }
+            } catch (SQLException e) {
+            }
+        }
+    }
+    
+    /**
+    * método para pegar todos os dados da tabela Estoque no banco de dados.
+    * @return Retorna uma <b>List</b> com todas os Produtos<br> se nenhum Produto foram encontrado, retorna uma <b>List</b> vazia.
+    */
+    public static List<Produto> getEstoque(){
+        
+        ResultSet rs = null;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+        
+        List<Produto> Estoque = new ArrayList<>();
+        
+        try {
+            conexao = Conexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM Produtos");
+            rs = instrucaoSQL.executeQuery();
+            
+            while(rs.next()){
+                int ID = rs.getInt("ID_Produto");
+                String Nome = rs.getString("Nome");
+                String Marca = rs.getString("Marca");
+                String Tamanho = rs.getString("Tamanho");
+                String Descricao = rs.getString("Descricao");
+                String Tag = rs.getString("Tag");
+                int QTD = rs.getInt("Quantidade");
+                double V_compra = rs.getDouble("V_compra");
+                double V_venda = rs.getDouble("V_venda");
+                boolean Statu = rs.getBoolean("Statu");
+                
+                Produto produto = new Produto(ID, Nome, Marca, Tamanho, Descricao, Tag, QTD, V_compra, V_venda, Statu);
+                Estoque.add(produto);
+            }
+            return Estoque;
+        } catch (SQLException e) {
+            throw new IllegalArgumentException(e.getMessage());
+        }finally{
+            try {
+                if (rs!=null) {
+                    rs.close();
+                }
+                if (instrucaoSQL!=null) {
+                    instrucaoSQL.close();
+                }
+                if (conexao!=null) {
+                    conexao.close();
+                    Conexao.fecharConexao();  
+                }
+            } catch (SQLException e) {
+            }
+        }
+    }
 }

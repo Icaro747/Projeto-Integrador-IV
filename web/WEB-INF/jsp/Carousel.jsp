@@ -56,9 +56,21 @@
         <script>
             const config = {
                 type: "carousel",
-                perView: 4,
+                perView: 5,
                 startAt: 0,
-                autoplay: 4000
+                autoplay: 4000,
+                hoverpause: true,
+                breakpoints: {
+                    1400:{
+                        perView: 4
+                    },
+                    1024: {
+                        perView: 2
+                    },
+                    600: {
+                        perView: 1
+                    }
+                }
             };
             new Glide('.glide', config).mount();
         </script>

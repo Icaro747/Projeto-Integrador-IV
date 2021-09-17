@@ -11,8 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap">
-        <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/owl.carousel.min.css"/>">
-        <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/owl.theme.default.min.css"/>">
         <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/MainCss.css"/>">
     </head>
     
@@ -24,367 +22,39 @@
         
         <div class="ConteinerProdutos">
             
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
+            <c:forEach items="${lista}" var="Produto">
+                <div class="ProdutoBox">
+                    <div class="Deliniado">
+                        <div class="ProdutoImg">
+                            <a href="">
+                                <img src="resources/img/roupa.jpg">
+                            </a>
+                        </div>
+                        <div class="ProdutoTitolo">
+                            <a href="">
+                                <h2><strong>${Produto.nome}</strong></h2>
+                            </a>
+                        </div>
+                        <div class="ProdutoPreso">
+                            <div class="DivisoriaPreso">
+                                <div class="PresoVista">
+                                    <span>R$ ${Produto.v_venda}</span>
+                                    <small> á vista</small>
+                                </div>
+                                <div class="PresoJuros">
+                                    <span>3x</span>
+                                    <small> de </small>
+                                    <span>R$ ${Math.round((Produto.v_venda/3)* 100)/100}</span>
+                                    <small> sem juros</small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ProdutoBox">
-                <div class="Deliniado">
-                    <div class="ProdutoImg">
-                        <a href="">
-                            <img src="resources/img/roupa.jpg">
-                        </a>
-                    </div>
-                    <div class="ProdutoTitolo">
-                        <a href="">
-                            <h2>
-                                <strong>
-                                    prototo
-                                </strong>
-                            </h2>
-                        </a>
-                    </div>
-                    <div class="ProdutoPreso">
-                        <div class="DivisoriaPreso">
-                            <div class="PresoVista">
-                                <span>R$ 50,90</span>
-                                <small> á vista</small>
-                            </div>
-                            <div class="PresoJuros">
-                              <span>3x</span>
-                              <small> de </small>
-                              <span>R$ 16,96</span>
-                              <small> sem juros</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
+            </c:forEach>
             
         </div>
         
-        
-        
-        <script src="resources/js/jQuery3.min.lib.js"></script>  
-        <script src="resources/js/owl.carousel.min.js"></script> 
-        <script src="resources/js/js.js"></script>
         
     </body>
     

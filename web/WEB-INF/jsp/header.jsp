@@ -51,5 +51,7 @@
                 </div>
             </div>
         </header>
+        
+        <script src="resources/js/js.js"></script>
     </body>
 </html>
