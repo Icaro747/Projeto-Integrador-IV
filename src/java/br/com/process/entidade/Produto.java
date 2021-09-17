@@ -5,7 +5,7 @@ package br.com.process.entidade;
  * @author Icaro
  */
 public class Produto {
-    
+
     private int id_produto;
     private String nome;
     private String marca;
@@ -15,9 +15,9 @@ public class Produto {
     private int quantidade;
     private double v_compra;
     private double v_venda;
-    private String status;
-    
-    public Produto(int id_produto, String nome, String marca, String tamanho, String descricao, String tag, int quantidade, double v_compra, double v_venda, String status) {
+    private boolean status;
+
+    public Produto(int id_produto, String nome, String marca, String tamanho, String descricao, String tag, int quantidade, double v_compra, double v_venda, boolean status) {
         this.id_produto = id_produto;
         this.nome = nome;
         this.marca = marca;
@@ -27,6 +27,14 @@ public class Produto {
         this.quantidade = quantidade;
         this.v_compra = v_compra;
         this.v_venda = v_venda;
+        this.status = status;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
@@ -102,15 +110,6 @@ public class Produto {
         this.v_venda = v_venda;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
-    
     public boolean validarPrecoUnit() {
         return true;
     }
@@ -119,7 +118,7 @@ public class Produto {
     public String toString() {
         return String.format("id: %d <br/> Nome: %s <br/> Marca: %s <br/> Tamanho: %s <br/>"
                 + " Descricao: %s <br/> Tag: %s <br/> Qtd: %d <br/> Valor de Compra: %f <br/>"
-                + "Valor de Venda: %f <br/> Status: %s", 
+                + "Valor de Venda: %f <br/> Status: %s",
                 id_produto, nome, marca, tamanho, descricao, tag, quantidade, v_compra, v_venda, status);
     }
 }
